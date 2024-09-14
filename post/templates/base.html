@@ -14,8 +14,8 @@
             <ul>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'home' %}">INICIO</a> </li><!-- inicio-->
-                <li><a href="{% url 'post_manage' %}">GESTIONAR POSTS</a> </li><!-- gestionar posts-->
-                <li><a href="{% url 'mensajes' %}">VER POSTS</a></li><!-- ver posts-->
+                <li><a href="{% url 'crear' %}">CREAR POST</a></li>
+                <li><a href="{% url 'lista_posteos' %}">VER POSTS</a></li><!-- ver posts-->
                 <li><a href="{% url 'logout' %}">CERRAR SESION</a></li><!-- cerrar sesion-->
                 {% else %}
                 <li><a href="{% url 'login' %}">INICIAR SESION</a></li><!-- login -->
