@@ -127,42 +127,7 @@ form {
     background-color: #e65c00;
 }
 
-.mensaje-container {
-    display: flex;
-    justify-content: space-around; 
-    align-items: flex-start;
-    gap: 20px;
-    margin: 20px auto;
-    max-width: 1200px;
-}
 
-.mensaje-card {
-    padding: 10px;
-    background-color: var(--color-gris);
-    margin: 10px 20px 10px 0px; /* el margen queda siempre con una ligera inclinacion hacia la derecha como una sangria */
-    width: 90%; /* Ajusta el ancho de las tarjetas */
-    border-radius: 8px;
-    text-align: left; /* Alinea la info del mensaje a la izq */
-}
-
-.mensaje-section {
-    flex: 1;
-    background: var(--color-naranja);
-    color: var(--color-claro);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    max-width: 700px;
-    margin: 10px 20px 10px 30px;
-}
-
-.mensaje-container ul {
-    list-style-type: none;
-}
-
-.mensaje-card strong {
-    color: var(--color-naranja);
-}
 
 footer {
     background-color: var(--color-gris);
@@ -272,4 +237,41 @@ h2.centered-content {
     margin-bottom: 20px;
     font-family: Arial, sans-serif;
     color: #333;
+}
+
+.post-container {
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-start;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.post-card {
+    padding: 10px;
+    background-color: var(--color-gris);
+    margin: 10px 20px 10px 0px; /* el margen queda siempre con una ligera inclinacion hacia la derecha como una sangria */
+    width: 90%; /* Ajusta el ancho de las tarjetas */
+    border-radius: 8px;
+    text-align: left; /* Alinea la info del post a la izq */
+}
+
+.post-section {
+    flex: 1;
+    background: var(--color-naranja);
+    color: var(--color-claro);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    max-width: 700px;
+    margin: 10px 20px 10px 30px;
+}
+
+.post-container ul {
+    list-style-type: none;
+}
+
+.post-card strong {
+    color: var(--color-naranja);
 }

@@ -14,6 +14,6 @@ urlpatterns = [
     path('posts/',views.post_list, name='lista_posteos'),
     path('posts/<int:pk>', views.post_detail, name='detalle_posteo'),
     path('posts/create', views.Crear, name='crear'),
-    path('posts/<id>/delete', views.delete_post, name='delete'),
+    path('posts/<pk>/delete', views.delete_post, name='delete'),
     path('posts/<id>/edit', views.EditarPost, name='edit'),
 ]

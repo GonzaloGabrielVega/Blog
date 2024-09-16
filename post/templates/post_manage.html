@@ -3,5 +3,22 @@
 {% block title %} Inicio {% endblock %}
 
 {% block content %}
-    <h1>esto es post manage</h1>
+    <div class="centered-content">
+        <h2>Crear un Post</h2>
+        <div class="form-container">
+            <div class="form">
+                <form action="{% url 'crear' %}" method="post">
+                    {% csrf_token %}
+                    <label for="titulo"> Titulo: </label>
+                    <input type="text" id="titulo" name="titulo">
+
+                    <label for="contenido">Que estas pensando</label>
+                    <textarea name="contenido" id="contenido" required></textarea>
+
+                    <button type="submit">Publicar</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}

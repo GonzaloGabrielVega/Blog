@@ -1,7 +1,49 @@
 {% extends 'base.html' %}
 
-{% block title %} Inicio {% endblock %}
+{% block title %}Posts{% endblock %}
 
 {% block content %}
-    <h1>esto es posts list</h1>
+    
+<div class="centered-content">
+    <h2>POSTEOS</h2>
+</div>
+
+        <div class="">
+            <h3 class="centered-content">MIS POSTS</h3>
+            <ul class="centered-content">
+                {% for post in posts %}
+                    {% if post.author == user %}
+                        <li class="post-card">
+                            <strong>Título:</strong> {{ post.titulo }}<br>
+                            <strong>Contenido:</strong> {{ post.contenido }}<br>
+                            <strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br>
+                            <form method="POST" action="{% url 'delete' post.pk %}">
+                                {% csrf_token %}
+                                <button type="submit">Eliminar</button>
+                        </li>
+                    {% endif %}
+                {% empty %}
+                    <li>No hay posts para mostrar.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="">
+            <h3 class="">POSTS REALIZADOS</h3>
+            <ul class="">
+                {% for post in posts %}
+                    {% if post.author != user %}
+                        <li class="">
+                            <strong>Título:</strong> {{ post.titulo }}<br>
+                            <strong>Contenido:</strong> {{ post.contenido }}<br>
+                            <strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br>
+                        </li>
+                    {% endif %}
+                {% empty %}
+                    <li>Nadie ha creado posts :(</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+
 {% endblock %}

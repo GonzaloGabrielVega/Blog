@@ -56,7 +56,7 @@ def Crear(request):
             post=form.save(commit=False)
             post.author = request.user
             post.save()
-            return redirect('post')
+            return redirect('lista_posteos')
     else:
         form = PostForm()
     return render(request,'post_manage.html', {'form':form})
@@ -76,5 +76,5 @@ def delete_post(request, pk):
     post = get_object_or_404(Posteo, pk=pk)
     if request.method == 'POST':
         post.delete()
-        return redirect('post_list')  # Redirige a la lista de posts después de eliminar
+        return redirect('lista_posteos')  # Redirige a la lista de posts después de eliminar
     return render(request, 'post.html', {'post': post})
