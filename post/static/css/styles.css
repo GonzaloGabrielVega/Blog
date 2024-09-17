@@ -1,5 +1,3 @@
-/*MARGIN: TOP RIGHT BOTTOM LEFT; */
-
 :root {
     --color-naranja: #ff6f00;
     --color-gris: #333333;
@@ -13,41 +11,46 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;   
+    min-height: 100vh;
 }
 
 header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: var(--color-gris);
     color: var(--color-claro);
-    padding: 10px;
+    padding: 0 20px;
     text-align: center;
     border-bottom: 5px solid var(--color-naranja);
     height: 100px;
 }
 
 header h1 {
-    margin: 0;
+    margin: 0 auto;
+    text-align: center;
     font-size: 2.5em;
+    flex-grow: 1; /* Hace que el h1 ocupe el espacio necesario para centrarlo */
+}
+
+.header p {
+    margin: 0; 
+    text-align: center;
+    color: var(--color-claro);
 }
 
 h2 {
     margin-left: 20px;
     color: var(--color-naranja);
 }
+
 .centered-content {
     text-align: center;
     margin: 0 auto;
+    text-align: center;
 }
 
 /* Navegación */
-nav {
-    background-color: var(--color-dark);
-    color: var(--color-light);
-    padding: 10px 0;
-}
-
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -61,7 +64,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--color-light); 
+    color: var(--color-claro);
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
@@ -71,11 +74,10 @@ nav ul li a {
 form {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-dark);
+    background-color: var(--color-gris);
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid var(--color-orange);
-    color: var(--color-light);
+    color: var(--color-claro);
     max-width: 400px;
     margin: auto;
     text-align: center;
@@ -109,25 +111,18 @@ form {
     color: var(--color-gris);
 }
 
-.card p, .card a {
-    margin-bottom: 20px;
-}
-
 .card .btn {
     text-decoration: none;
     color: var(--color-claro);
     background-color: var(--color-gris);
     padding: 10px 20px;
     border-radius: 5px;
-    display: inline-block;
     transition: background-color 0.3s ease;
 }
 
 .card .btn:hover {
     background-color: #e65c00;
 }
-
-
 
 footer {
     background-color: var(--color-gris);
@@ -137,31 +132,17 @@ footer {
     border-top: 3px solid var(--color-naranja);
 }
 
-
-/* formulario crear*/
+/* Formulario crear */
 .form-container {
     background-color: var(--color-gris);
     border-radius: 20px;
     box-shadow: 0 4px 20px var(--color-naranja);
-    padding: 20px;
+    padding: 10px;
     max-width: 500px;
-    margin: 0 auto ; /* Centra el contenedor en la página */
-    margin-bottom: 100px;
+    margin: 0 auto ;
 }
 
-.form form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-textarea {
+input[type="text"], textarea {
     border: 1px solid var(--color-gris);
     border-radius: 10px;
     padding: 10px;
@@ -178,7 +159,7 @@ textarea {
 
 button[type="submit"] {
     background-color: var(--color-claro);
-    border:var(--color-naranja);
+    border: none;
     border-radius: 20px;
     color: var(--color-gris);
     cursor: pointer;
@@ -189,7 +170,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color:var(--color-naranja);
+    background-color: var(--color-naranja);
     color: var(--color-claro);
 }
 
@@ -197,81 +178,102 @@ button[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width:500px;
-    margin: 0 auto 100px auto;
+    max-width: 500px;
+    margin: 0 auto 100px;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: var(--color-gris);
 }
 
-.auth form {
-    width: 90%;   
-}
 
-.auth form p{
-    color: var(--color-naranja);
+.manage-container {
+    display: flex;
+    justify-content: space-between; /* Espacia los divs y los pega a los lados */
+    align-items: flex-start;
+    gap: 20px; /* Ajusta el espacio entre los divs */
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px; 
 }
-.auth form li {
-    color: var(--color-naranja);
-    list-style-type: none;
-}
-.auth button {
-    background-color: var(--color-claro);
-    border: none;
-    border-radius: 4px;
-    color: var(--color-gris);
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
+/* POSTS  */
 
-.auth button:hover {
-    background-color: var(--color-naranja);
-}
-
-h2.centered-content {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
-    color: #333;
-}
-
+/* Estilo general para la sección de posts */
 .post-container {
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-around;
     align-items: flex-start;
-    gap: 20px;
+    gap: 10px;
     margin: 20px auto;
     max-width: 1200px;
 }
 
 .post-card {
-    padding: 10px;
+    padding: 15px;
     background-color: var(--color-gris);
-    margin: 10px 20px 10px 0px; /* el margen queda siempre con una ligera inclinacion hacia la derecha como una sangria */
-    width: 90%; /* Ajusta el ancho de las tarjetas */
+    margin: 10px 0;
+    width: 100%;
     border-radius: 8px;
-    text-align: left; /* Alinea la info del post a la izq */
-}
-
-.post-section {
-    flex: 1;
-    background: var(--color-naranja);
-    color: var(--color-claro);
-    border-radius: 8px;
+    text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    max-width: 700px;
-    margin: 10px 20px 10px 30px;
 }
 
-.post-container ul {
-    list-style-type: none;
+.post-card h3 {
+    text-align: center;
+    color: var(--color-gris);
+    margin-bottom: 15px;
 }
 
 .post-card strong {
     color: var(--color-naranja);
+}
+
+/* Lista dentro del contenedor de posts */
+.post-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Justificación del contenido del post */
+.post-card p {
+    text-align: left;
+    margin: 10px 0;
+    color: var(--color-claro);
+}
+
+/* Botones de eliminar dentro de los posts */
+.post-card button {
+    background-color: var(--color-naranja);
+    border: none;
+    color: var(--color-claro);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.post-card button:hover {
+    background-color: #e65c00;
+}
+
+/* Título de la sección general */
+h2 {
+    text-align: center;
+    color: var(--color-naranja);
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+/* Título para las secciones de posts */
+h3 {
+    color: var(--color-gris);
+    text-align: center;
+}
+
+.user {
+    background-color: var(--color-claro);
+    padding: 8px;
+    color: var(--color-naranja);
+    border-radius: 10px;
 }

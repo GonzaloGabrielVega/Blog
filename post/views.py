@@ -59,7 +59,8 @@ def Crear(request):
             return redirect('lista_posteos')
     else:
         form = PostForm()
-    return render(request,'post_manage.html', {'form':form})
+        posts = Posteo.objects.exclude(author=request.user)
+    return render(request,'post_manage.html', {'form':form, 'posts':posts})
 
 @login_required
 def post_list(request):

@@ -3,22 +3,43 @@
 {% block title %} Inicio {% endblock %}
 
 {% block content %}
+<div class="manage-container">
+    
     <div class="centered-content">
         <h2>Crear un Post</h2>
+        
         <div class="form-container">
             <div class="form">
                 <form action="{% url 'crear' %}" method="post">
                     {% csrf_token %}
-                    <label for="titulo"> Titulo: </label>
-                    <input type="text" id="titulo" name="titulo">
+                    <input type="text" id="titulo" name="titulo" placeholder="Titulo">
 
-                    <label for="contenido">Que estas pensando</label>
-                    <textarea name="contenido" id="contenido" required></textarea>
+                    <textarea name="contenido" id="contenido" placeholder="Escribe algo..." required></textarea>
 
                     <button type="submit">Publicar</button>
                 </form>
             </div>
         </div>
-
     </div>
+
+    <div class="centered-content">
+        <div class="post-container">    
+            <div class="">
+                <h2 class="centered-content">POSTS REALIZADOS</h2>
+                <ul class="centered-content">
+                    {% for post in posts %}
+                        <li class="post-card">
+                            <strong class="user">{{ post.author }}</strong><br>
+                            <p><strong>Título:</strong> {{ post.titulo }}<br> </p>
+                            <p><strong>Contenido:</strong> {{ post.contenido }}<br> </p>
+                            <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br> </p>
+                        </li>
+                    {% empty %}
+                        <p>Nadie ha creado posts :( </p>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
