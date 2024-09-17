@@ -87,28 +87,58 @@
 }
 
 /* Estilo para los contenedores individuales de secciones de posts */
-.posts-container > div {
-    flex: 1;
-    background-color: var(--color-claro);
-    border-radius: 10px;
+.post-container {
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px; /* Limitar el ancho máximo del contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar una sombra suave */
 }
 
 /* Estilo para los enlaces de los posts */
 .post-link {
     text-decoration: none;
+    font-size: 1.2em;
     color: var(--color-naranja);
-    display: block;
-    margin-bottom: 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .post-link:hover {
-    color: #e65c00;
+    color: var(--color-claro);
 }
+
 
 /* Estilo para los nombres de usuario dentro de los posts */
 .post-author {
     color: var(--color-naranja);
     font-weight: bold;
+}
+
+.post-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-container ul li {
+    background-color: var(--color-gris);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-container ul li:hover {
+    transform: translateY(-5px); /* Elevar el post ligeramente */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Aumentar la sombra */
+}
+
+.post-container ul li span {
+    display: block;
+    margin-top: 5px;
+    color: var(--color-claro);
+    font-size: 0.9em;
+    font-style: italic;
 }

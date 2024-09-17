@@ -32,8 +32,9 @@ def user_logout(request):
     logout(request)  
     return redirect('login')  
 
-def home(request): 
-    return render(request, 'home.html')
+def home(request):
+    posts = Posteo.objects.all().order_by('-Fecha_de_publicacion')  # Muestra los posts más recientes primero
+    return render(request, 'home.html', {'posts':posts})
 
 # MANAGE POSTS
 @login_required

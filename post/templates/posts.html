@@ -3,53 +3,55 @@
 {% block title %}Posts{% endblock %}
 
 {% block content %}
-    
-<div class="">
+<div class="post-page-container">
     <h2>POSTEOS</h2>
-</div>
+    
     <div class="main-div">
-        
-        <div class="">
-            <h2 class="">MIS POSTS</h2>
-            <ul class="">
+        <!-- Sección Mis Posts -->
+        <div class="my-posts-section">
+            <h2>MIS POSTS</h2>
+            <ul class="posts-list">
                 {% for post in posts %}
                     {% if post.author == user %}
-                        <li class="">
-                            <a href="{% url 'detalle_posteo' post.pk %}" class=""">
-                            <p><strong>Título:</strong> {{ post.titulo }}<br> </p>
-                            <p><strong>Contenido:</strong> {{ post.contenido }}<br> </p>
-                            <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br> </p>          
-                            <form method="POST" action="{% url 'delete' post.pk %}">
-                                {% csrf_token %}
-                            <button type="submit">Eliminar</button>
-                            </form>
-                        </li>
+                    <a href="{% url 'detalle_posteo' post.pk %}" class="post-link">
+                        <li class="post-item">
+                                <p><strong>Título:</strong> {{ post.titulo }}<br></p>
+                                <p><strong>Contenido:</strong> {{ post.contenido }}<br></p>
+                                <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br></p>
+                                <!-- Formulario de eliminación separado del enlace -->
+                                <form method="POST" action="{% url 'delete' post.pk %}">
+                                    {% csrf_token %}
+                                    <button type="submit">Eliminar</button>
+                                </form>
+                            </li>
+                        </a>
                     {% endif %}
                 {% empty %}
-                        <p>No hay posts para mostrar</p>
+                    <p>No hay posts para mostrar</p>
                 {% endfor %}
             </ul>
         </div>
 
-        <div class="">
-            <h2 class="">POSTS REALIZADOS</h2>
-            <ul class="">
+        <!-- Sección Posts Realizados -->
+        <div class="other-posts-section">
+            <h2>POSTS REALIZADOS</h2>
+            <ul class="posts-list">
                 {% for post in posts %}
                     {% if post.author != user %}
-                        <li class="">
-                            <a href="{% url 'detalle_posteo' post.pk %}" class="">
-                            <strong class="">{{post.author}}</strong><br></a>
-                            <p><strong>Título:</strong> {{ post.titulo }}<br> </p>
-                            <p><strong>Contenido:</strong> {{ post.contenido }}<br> </p>
-                            <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br> </p>
-                        </li>
+                    <a href="{% url 'detalle_posteo' post.pk %}" class="post-link">
+                        <li class="post-item">
+                                <strong>{{ post.author }}</strong><br>
+                                <p><strong>Título:</strong> {{ post.titulo }}<br></p>
+                                <p><strong>Contenido:</strong> {{ post.contenido }}<br></p>
+                                <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br></p>
+                            </li>
+                        </a>
                     {% endif %}
                 {% empty %}
-                        <p>Nadie ha creado posts :( </p>
+                    <p>Nadie ha creado posts :(</p>
                 {% endfor %}
             </ul>
         </div>
-
     </div>
-
+</div>
 {% endblock %}
