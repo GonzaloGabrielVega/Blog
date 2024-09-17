@@ -10,12 +10,14 @@
 <div class="post-container">
     <!-- Detalle del Post -->
     <div class="post-card">
+        <strong class="user">{{post.author}}</strong><br>        
         <p><strong>Título:</strong> {{ post.titulo }}<br></p>
         <p><strong>Contenido:</strong> {{ post.contenido }}<br></p>
         <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br></p>
     </div>
     
     <!-- Opciones de editar y eliminar si es el autor -->
+    <div class="post-container">    
         {% if user == post.author %}
             <form action="{% url 'edit' post.pk %}" style="display: inline; margin-bottom: 10px;">
                 {% csrf_token %}
@@ -26,6 +28,7 @@
                 <button type="submit" class="btn">Eliminar</button>
             </form>
         {% endif %}
+    </div>
 </div>
 
 <!-- Enlace de regreso a la lista de posts -->
