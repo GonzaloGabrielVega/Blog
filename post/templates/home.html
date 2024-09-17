@@ -3,24 +3,7 @@
 {% block title %} Inicio {% endblock %}
 
 {% block content %}
-<div class="card-container">
-    <div class="card">
-        <h3 class="centered-content">POSTS REALIZADOS</h3>
-        <ul class="centered-content">
-            {% for post in posts %}
-            {% if post.author != user %}
-                <li class="card">
-                <div class="card-body">
-                    <strong>Título:</strong> {{ post.titulo }}<br>
-                    <strong>Contenido:</strong> {{ post.contenido }}<br>
-                    <strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br>
-                </div>
-                </li>
-            {% endif %}
-            {% empty %}
-            <p>Nadie ha creado posts :( </p>
-            {% endfor %}
-        </ul>
-    </div>
+<br><div class="card centered-content">
+    <p>esto es un blog, bienvenido {{ user.username }}</p>
 </div>
 {% endblock %}

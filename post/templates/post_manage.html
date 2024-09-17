@@ -3,7 +3,7 @@
 {% block title %} Inicio {% endblock %}
 
 {% block content %}
-<div class="manage-container">
+<div class="post-container">
     
     <div class="centered-content">
         <h2>Crear un Post</h2>
@@ -22,24 +22,27 @@
         </div>
     </div>
 
-    <div class="centered-content">
-        <div class="post-container">    
-            <div class="">
-                <h2 class="centered-content">POSTS REALIZADOS</h2>
-                <ul class="centered-content">
-                    {% for post in posts %}
-                        <li class="post-card">
-                            <strong class="user">{{ post.author }}</strong><br>
-                            <p><strong>Título:</strong> {{ post.titulo }}<br> </p>
-                            <p><strong>Contenido:</strong> {{ post.contenido }}<br> </p>
-                            <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br> </p>
-                        </li>
-                    {% empty %}
-                        <p>Nadie ha creado posts :( </p>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
+    <div class="">
+        <h2 class="centered-content">Reciente</h2>
+        <ul class="centered-content">
+            {% for post in posts %}
+                {% if post.author != user %}
+                    <li class="post-card">
+                        <strong class="user">{{post.author}}</strong><br>
+                        <p><strong>Título:</strong> {{ post.titulo }}<br> </p>
+                        <p><strong>Contenido:</strong> {{ post.contenido }}<br> </p>
+                        <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br> </p>          
+                        <form method="POST" action="{% url 'delete' post.pk %}">
+                            {% csrf_token %}
+                        <button type="submit">Eliminar</button>
+                        </form>
+                    </li>
+                {% endif %}
+            {% empty %}
+                    <p>No hay posts para mostrar</p>
+            {% endfor %}
+        </ul>
     </div>
 
+</div>
 {% endblock %}
