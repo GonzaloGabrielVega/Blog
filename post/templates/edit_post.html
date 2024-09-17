@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Post{% endblock %}
+
+{% block content %}
+<div class="centered-content">
+    <h2>Editar Post</h2>
+</div>
+
+<div class="post-container">
+    <div class="form-container">
+        <div class="post-card">
+            <form action="{% url 'crear' %}" method="POST" class="centered-content">
+                {% csrf_token %}
+                {{ form.as_p }}  <!-- Renderiza el formulario con campos ya existentes -->
+                
+                <button type="submit" class="btn">Guardar Cambios</button>
+            </form>
+            <form action="{% url 'detalle_posteo' post.pk %}">
+                <button type="submit">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        
+    </div>
+</div>
+{% endblock %}
