@@ -3,14 +3,34 @@
 {% block title %}{% if is_login %}Iniciar Sesión{% else %}Registrarse{% endif %}{% endblock %}
 
 {% block content %}
-    <h2 class="centered-content">Iniciar Sesión</h2>
-    
-    <div class="auth">
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }} 
-            <p></p>
-            <button type="submit">{% if is_login %}Iniciar Sesión{% else %}Registrarse{% endif %}</button>
-        </form>
+    <div style="text-align: center; padding: 20px;">
+        <h2 style="margin-bottom: 20px;">
+            {% if is_login %}Iniciar Sesión{% else %}Registrarse{% endif %}
+        </h2>
+        
+        <div style="display: inline-block; text-align: center; padding: 20px; background-color: #333; border-radius: 8px;color:white; ">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                
+                {% for field in form %}
+                    <div style="margin-bottom: 10px;">
+                    
+                        <label for="{{ field.id_for_label }}" style="display: block; margin-bottom: 5px;">
+                            {{ field.label }}
+                        </label>
+                        
+                        {{ field }}
+                        
+                        {{ field.errors }}
+                    
+                    </div>
+                {% endfor %}
+                
+                <button type="submit" style="background-color: #ff6f00; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                    {% if is_login %}Iniciar Sesión{% else %}Registrarse{% endif %}
+                </button>
+            </form>
+        </div>
     </div>
 {% endblock %}

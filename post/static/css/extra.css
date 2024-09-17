@@ -1,3 +1,4 @@
+
 .post-detail-container {
     padding:10px;
 }
@@ -142,3 +143,62 @@
     font-size: 0.9em;
     font-style: italic;
 }
+
+/*    AUTH    */
+
+/* Centrar el contenido de las páginas de autenticación */
+.centered-content {
+    text-align: center;
+}
+
+/* Estilos para el contenedor de autenticación */
+.auth-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--color-gris); /* Fondo del contenedor */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del formulario */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: var(--color-gris-oscuro); /* Color del texto en el formulario */
+}
+
+/* Estilo de los campos de texto (input, select, etc.) */
+.auth-form input, .auth-form select, .auth-form textarea {
+    padding: 10px;
+    border: 1px solid var(--color-gris-claro); /* Bordes visibles */
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: var(--color-blanco); /* Fondo de los inputs */
+    color: var(--color-gris-oscuro); /* Color del texto en los inputs */
+}
+
+/* Estilo de las etiquetas */
+.auth-form label {
+    color: var(--color-gris-oscuro); /* Color del texto en las etiquetas */
+}
+
+/* Estilo del botón */
+.auth-btn {
+    background-color: var(--color-naranja);
+    color: var(--color-claro);
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+    background-color: var(--color-claro);
+    color: var(--color-naranja);
+}
+
+
