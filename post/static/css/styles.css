@@ -107,6 +107,7 @@ footer {
 h2 {
     color: var(--color-naranja);
     margin-bottom: 20px;
+    margin-left: 20px;
 }
 
 form {
@@ -131,7 +132,7 @@ textarea {
 button[type="submit"] {
     background-color: var(--color-naranja);
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     color: var(--color-claro);
     cursor:pointer;
     font-size: 16px;
@@ -165,3 +166,4 @@ li p {
 strong {
     color: var(--color-naranja);
 }
+

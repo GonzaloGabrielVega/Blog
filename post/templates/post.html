@@ -7,32 +7,34 @@
     <h2>Detalle del Post</h2>
 </div>
 
-<div class="post-container">
-    <!-- Detalle del Post -->
-    <div class="post-card">
-        <strong class="user">{{post.author}}</strong><br>        
-        <p><strong>Título:</strong> {{ post.titulo }}<br></p>
-        <p><strong>Contenido:</strong> {{ post.contenido }}<br></p>
-        <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br></p>
-    </div>
-    
-    <!-- Opciones de editar y eliminar si es el autor -->
-    <div class="post-container">    
-        {% if user == post.author %}
-            <form action="{% url 'edit' post.pk %}" style="display: inline; margin-bottom: 10px;">
-                {% csrf_token %}
-                <button type="submit" class="btn">Editar</button>
-            </form>
-            <form method="POST" action="{% url 'delete' post.pk %}" style="display: inline; margin-bottom: 10px;">
-                {% csrf_token %}
-                <button type="submit" class="btn">Eliminar</button>
-            </form>
-        {% endif %}
-    </div>
-</div>
+<div class="post-detail-container">
 
-<!-- Enlace de regreso a la lista de posts -->
-<div class="centered-content" style="margin-top: 30px;">
-    <a href="{% url 'lista_posteos' %}" class="btn">Volver a la lista</a>
-</div>
+    <!-- Detalle del Post y Botones -->
+    <div class="post-detail-wrapper">
+        <div class="post-detail-card">
+            <strong class="">{{post.author}}</strong><br>        
+            <p><strong>Título:</strong> {{ post.titulo }}<br></p>
+            <p><strong>Contenido:</strong> {{ post.contenido }}<br></p>
+            <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br></p>
+        </div>
+        <!-- Opciones de editar y eliminar si es el autor -->
+        <div class="post-detail-actions">    
+            {% if user == post.author %}
+                <form action="{% url 'edit' post.pk %}" >
+                    {% csrf_token %}
+                    <button type="" class="post-detail-btn">EDITAR</button>
+                </form>
+                <form method="POST" action="{% url 'delete' post.pk %}" ">
+                    {% csrf_token %}
+                    <button type="" class="post-detail-btn">ELIMINAR</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Enlace de regreso a la lista de posts -->
+    <div class="centered-button-container">
+        <a href="{% url 'lista_posteos' %}" class="back-to-list">Volver a la lista</a>
+    </div>
+
 {% endblock %}
