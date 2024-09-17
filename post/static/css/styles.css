@@ -67,3 +67,18 @@ footer {
     padding: 20px;
     border-top: 3px solid var(--color-naranja);
 }
+
+/*      CONTENIDOOOO       */
+
+.home {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--color-claro);
+    border-radius: 10px;
+}
+
+.home p {
+    font-size: 2em;
+    color: var(--color-gris);
+}
