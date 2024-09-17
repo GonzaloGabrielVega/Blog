@@ -1,7 +1,35 @@
 {% extends 'base.html' %}
 
-{% block title %} Inicio {% endblock %}
+{% block title %}Detalle del Post{% endblock %}
 
 {% block content %}
-    <h1>esto es post (detail)</h1>
+<div class="centered-content">
+    <h2>Detalle del Post</h2>
+</div>
+
+<div class="post-container">
+    <!-- Detalle del Post -->
+    <div class="post-card">
+        <p><strong>Título:</strong> {{ post.titulo }}<br></p>
+        <p><strong>Contenido:</strong> {{ post.contenido }}<br></p>
+        <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br></p>
+    </div>
+    
+    <!-- Opciones de editar y eliminar si es el autor -->
+        {% if user == post.author %}
+            <form action="{% url 'edit' post.pk %}" style="display: inline; margin-bottom: 10px;">
+                {% csrf_token %}
+                <button type="submit" class="btn">Editar</button>
+            </form>
+            <form method="POST" action="{% url 'delete' post.pk %}" style="display: inline; margin-bottom: 10px;">
+                {% csrf_token %}
+                <button type="submit" class="btn">Eliminar</button>
+            </form>
+        {% endif %}
+</div>
+
+<!-- Enlace de regreso a la lista de posts -->
+<div class="centered-content" style="margin-top: 30px;">
+    <a href="{% url 'lista_posteos' %}" class="btn">Volver a la lista</a>
+</div>
 {% endblock %}

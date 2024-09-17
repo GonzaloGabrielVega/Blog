@@ -15,6 +15,8 @@
                 {% for post in posts %}
                     {% if post.author == user %}
                         <li class="post-card">
+                            <a href="{% url 'detalle_posteo' post.pk %}" class="post-link">
+
                             <p><strong>Título:</strong> {{ post.titulo }}<br> </p>
                             <p><strong>Contenido:</strong> {{ post.contenido }}<br> </p>
                             <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br> </p>          

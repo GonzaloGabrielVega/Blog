@@ -59,7 +59,7 @@ def Crear(request):
             return redirect('lista_posteos')
     else:
         form = PostForm()
-        posts = Posteo.objects.exclude(author=request.user)
+        posts = Posteo.objects.all().order_by('-Fecha_de_publicacion')
     return render(request,'post_manage.html', {'form':form, 'posts':posts})
 
 @login_required

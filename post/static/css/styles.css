@@ -46,7 +46,7 @@ h2 {
 
 .centered-content {
     text-align: center;
-    margin: 0 auto;
+    margin: 20px 0;
     text-align: center;
 }
 
@@ -140,7 +140,6 @@ footer {
     border-radius: 20px;
     box-shadow: 0 4px 20px var(--color-naranja);
     padding: 10px;
-    max-width: 800px;
     margin: 0 auto ;
 }
 
@@ -150,8 +149,6 @@ input[type="text"], textarea {
     padding: 10px;
     font-size: 16px;
     margin-bottom: 20px;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 textarea {
@@ -203,21 +200,23 @@ button[type="submit"]:hover {
 /* Estilo general para la sección de posts */
 .post-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; 
     align-items: flex-start;
-    gap: 10px;
+    gap: 20px; 
     margin: 20px auto;
     max-width: 1200px;
+    padding: 0 20px;
+    box-sizing: border-box; 
 }
 
 .post-card {
-    padding: 15px;
     background-color: var(--color-gris);
-    margin: 10px 0;
-    width: 100%;
+    padding: 15px;
     border-radius: 8px;
-    text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px; 
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 .post-card h3 {
@@ -278,4 +277,14 @@ h3 {
     padding: 8px;
     color: var(--color-naranja);
     border-radius: 10px;
+}
+
+.post-link {
+    text-decoration: none;
+    color: inherit; /* Mantiene el color del texto original */
+    display: block; /* Hace que todo el área del post sea clicable */
+}
+
+.post-link:hover {
+    color: var(--color-naranja); /* Cambia el color del texto al pasar el mouse */
 }
