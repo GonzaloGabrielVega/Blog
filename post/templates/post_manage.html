@@ -3,13 +3,13 @@
 {% block title %} Inicio {% endblock %}
 
 {% block content %}
-<div class="post-container">
+<div class="main-div">
     
-    <div class="centered-content">
+    <div class="">
         <h2>Crear un Post</h2>
         
-        <div class="form">
-            <div class="form">
+        <div class="">
+            <div class="">
                 <form action="{% url 'crear' %}" method="post">
                     {% csrf_token %}
                     <input type="text" id="titulo" name="titulo" placeholder="Titulo">
@@ -21,11 +21,11 @@
             </div>
         </div>
         <br>
-            <h2 class="centered-content">MIS POSTS</h2>
-            <ul class="centered-content">
+            <h2 class="">MIS POSTS</h2>
+            <ul class=""">
                 {% for post in posts %}
                     {% if post.author == user %}
-                        <li class="post-card">
+                        <li class="">
                             <p><strong>Título:</strong> {{ post.titulo }}<br> </p>
                             <p><strong>Contenido:</strong> {{ post.contenido }}<br> </p>
                             <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br> </p>          
@@ -42,12 +42,12 @@
     </div>
 
     <div class="">
-        <h2 class="centered-content">Reciente</h2>
-        <ul class="centered-content">
+        <h2 class="">Reciente</h2>
+        <ul class="">
             {% for post in posts %}
                 {% if post.author != user %}
-                    <li class="post-card">
-                        <strong class="user">{{post.author}}</strong><br>
+                    <li class="">
+                        <strong class="">{{post.author}}</strong><br>
                         <p><strong>Título:</strong> {{ post.titulo }}<br> </p>
                         <p><strong>Contenido:</strong> {{ post.contenido }}<br> </p>
                         <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br> </p>          
