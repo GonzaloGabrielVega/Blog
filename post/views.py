@@ -46,7 +46,7 @@ def EditarPost(request, pk):
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
-    return render(request, 'post/post_manage.html', {'form':form})
+    return render(request, '', {'form':form})
 
 @login_required
 def Crear(request):
