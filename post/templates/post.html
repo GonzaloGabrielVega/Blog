@@ -17,7 +17,7 @@
             <p><strong>Contenido:</strong> {{ post.contenido }}<br></p>
             <p><strong>Fecha:</strong> {{ post.Fecha_de_publicacion }}<br></p>
         </div>
-        <!-- Opciones de editar y eliminar si es el autor -->
+
         <div class="post-detail-actions">    
             {% if user == post.author %}
                 <form action="{% url 'edit' post.pk %}" >
@@ -32,7 +32,6 @@
         </div>
     </div>
 
-    <!-- Enlace de regreso a la lista de posts -->
     <div class="centered-button-container">
         <a href="{% url 'lista_posteos' %}" class="back-to-list">Volver a la lista</a>
     </div>

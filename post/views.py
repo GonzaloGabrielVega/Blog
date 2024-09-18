@@ -44,7 +44,7 @@ def EditarPost(request, pk):
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('detalle_posteo', pk=post.pk)
     else:
         form = PostForm(instance=post)
     return render(request, 'edit_post.html', {'form':form, 'post':post})
