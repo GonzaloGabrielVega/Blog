@@ -3,15 +3,15 @@
   Este proyecto consiste en una aplicación web desarrollada con Django para la gestión de un blog, permitiendo a los usuarios crear, ver, editar y eliminar publicaciones de manera eficiente bajo un contexto de usuarios autenticados.
 
   # Requisitos previos
-## Antes de comenzar con la instalación, asegúrate de tener las siguientes herramientas instaladas en tu entorno:
+## *(Antes de comenzar con la instalación, asegúrate de tener las siguientes herramientas instaladas en tu entorno)*
 
-Python 3.10.12
-Django 4.2
-pip (Administrador de paquetes de Python)
-Git (Opcional)
+- Python 3.10.12
+- Django 4.2
+- pip (Administrador de paquetes de Python)
+- Git (Opcional)
 
   # Instalación
-## Pasos para instalar el proyecto:
+### Pasos para instalar el proyecto:
 
   # Clonar el repositorio:
 
